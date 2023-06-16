@@ -1,6 +1,6 @@
 {
   "name": "@defencedigital/design-tokens",
-  "version": "3.13.13",
+  "version": "3.13.16",
   "main": "dist/cjs/index.js",
   "author": "Defence Digital",
   "license": "Apache-2.0",
@@ -40,7 +40,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@defencedigital/eslint-config-react": "^3.13.13",
+    "@defencedigital/eslint-config-react": "^3.13.16",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^29.0.3",
@@ -57,7 +57,7 @@
     "source-map-loader": "^4.0.1",
     "style-dictionary": "^3.1.1",
     "styled-components": "^5.3.3",
-    "typescript": "^4.0.3",
+    "typescript": "^5.0.4",
     "webpack": "^5.52.1",
     "webpack-cli": "^5.0.1",
     "webpack-merge": "^5.2.0"
