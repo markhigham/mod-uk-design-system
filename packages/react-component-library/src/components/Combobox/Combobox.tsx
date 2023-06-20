@@ -44,6 +44,7 @@ export const Combobox: React.FC<ComboboxProps> = (props: ComboboxProps) => {
     onInputValueChange,
     onIsOpenChange,
     onSelectedItemChange,
+    isExactMatch
   } = useAutocomplete(React.Children.toArray(children))
 
   const {
@@ -145,11 +146,18 @@ export const Combobox: React.FC<ComboboxProps> = (props: ComboboxProps) => {
         }
       }
 
-      // What behaviour if press escape when isNewValue == true?
-      if (e.key === 'Escape' && isNewValue) {
-        console.log('escape new value')
-        setHighlightedIndex(-1)
-        return
+      if(e.key === 'Escape'){
+        if(isExactMatch){
+          // Is the current text an exact match?
+          // We use the original behaviour and clear
+          setHighlightedIndex(-1)
+        } else if(onNotInList){
+          // If it is a partial match we assume that we want to create a new
+          // entry with the partial text
+          onNotInList(inputValue)
+          // @ts-ignore - prevents the inputText being reset
+          e.nativeEvent.preventDownshiftDefault = true
+        }
       }
 
       onInputTabKeyHandler(e)

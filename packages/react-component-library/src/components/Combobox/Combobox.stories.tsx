@@ -54,6 +54,7 @@ const Template: ComponentStory<typeof Combobox> = (args) => {
         <AutocompleteOption value="one">One</AutocompleteOption>
         <AutocompleteOption value="two">Two</AutocompleteOption>
         <AutocompleteOption value="three">Three</AutocompleteOption>
+        <AutocompleteOption value="catchall">The quick brown fox jumps over the lazy dog</AutocompleteOption>
       </Combobox>
     </StyledWrapper>
   )
