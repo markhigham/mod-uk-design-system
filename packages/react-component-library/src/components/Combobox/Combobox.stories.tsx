@@ -32,14 +32,12 @@ const Template: ComponentStory<typeof Combobox> = (args) => {
     text: '',
   })
 
+  // console.table({ isNew, value, text })
+
   return (
     <StyledWrapper $isDisabled={args.isDisabled}>
-      <pre>isNew:{isNew ? 'yes' : 'no'}</pre>
-      <pre>value:{value}</pre>
-      <pre>typed {text}</pre>
       <Combobox
         {...args}
-        // initialValue="one"
         onNotInList={(newValue) => {
           setValues((p) => {
             return { value: '', text: newValue, isNew: true }
@@ -51,10 +49,10 @@ const Template: ComponentStory<typeof Combobox> = (args) => {
           })
         }}
       >
-        <AutocompleteOption value="one">One</AutocompleteOption>
-        <AutocompleteOption value="two">Two</AutocompleteOption>
-        <AutocompleteOption value="three">Three</AutocompleteOption>
-        <AutocompleteOption value="catchall">The quick brown fox jumps over the lazy dog</AutocompleteOption>
+        <AutocompleteOption value='one'>One</AutocompleteOption>
+        <AutocompleteOption value='two'>Two</AutocompleteOption>
+        <AutocompleteOption value='three'>Three</AutocompleteOption>
+        <AutocompleteOption value='catchall'>The quick brown fox jumps over the lazy dog</AutocompleteOption>
       </Combobox>
     </StyledWrapper>
   )
